@@ -17,5 +17,12 @@ public class EmailApplication {
                 "This is my first email message.");
         emailClient.sendEmail("Hey, " +
                 "This is my second email message.");
+
+        // Bean Scopes
+        AdvancedSpellChecker advancedSpellChecker1 = applicationContext.getBean("advancedSpellChecker", AdvancedSpellChecker.class);
+        System.out.println(advancedSpellChecker1);
+        AdvancedSpellChecker advancedSpellChecker2 = applicationContext.getBean("advancedSpellChecker", AdvancedSpellChecker.class);
+        System.out.println(advancedSpellChecker2);
+
     }
 }
