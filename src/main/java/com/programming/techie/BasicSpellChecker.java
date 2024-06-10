@@ -4,6 +4,7 @@ class BasicSpellChecker implements SpellChecker {
 
     public void checkSpelling(String emailMessage) {
         if (emailMessage != null) {
+            System.out.println("Checking Spelling using Basic Spell Checker..");
             System.out.println("Checking spelling...");
             System.out.println("Spell Checking Completed!!");
         } else {
