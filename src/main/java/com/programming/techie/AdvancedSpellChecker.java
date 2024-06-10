@@ -1,10 +1,17 @@
 package com.programming.techie;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AdvancedSpellChecker implements SpellChecker {
+public class AdvancedSpellChecker implements SpellChecker, InitializingBean, DisposableBean {
 
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("Setting Properties after Bean is initialized");
+    }
+    
     public void checkSpelling(String emailMessage){
         if (emailMessage != null) {
             // Determining the Language of the email Message
@@ -15,5 +22,10 @@ public class AdvancedSpellChecker implements SpellChecker {
         } else {
             throw new RuntimeException("An exception occurred while checking Spelling");
         }
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("Destroyed Properties");
     }
 }
