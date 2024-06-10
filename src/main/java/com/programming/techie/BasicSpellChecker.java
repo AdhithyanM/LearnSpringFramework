@@ -1,5 +1,8 @@
 package com.programming.techie;
 
+import org.springframework.stereotype.Component;
+
+@Component
 class BasicSpellChecker implements SpellChecker {
 
     public void checkSpelling(String emailMessage) {
