@@ -8,6 +8,9 @@ public class EmailApplication {
 //        EmailClient emailClient = new EmailClient(new AdvancedSpellChecker());
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+
+//        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+
         EmailClient emailClient = applicationContext.getBean("emailClient", EmailClient.class);
 
         emailClient.sendEmail("Hey, " +
